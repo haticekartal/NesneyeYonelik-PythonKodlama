@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+# Veri setini yükleyelim
+iris = load_iris()
+
+# Çanak yaprak uzunluklarını alalım
+uzunluklar = iris.data[:, 0]
+
+# Histogram grafiği oluşturalım
+plt.hist(uzunluklar, bins=10)
+
+# Grafik başlığını belirleyelim
+plt.title("Çanak Yaprak Uzunlukları")
+
+# X ve Y eksenlerine isim verelim
+plt.xlabel("Uzunluk")
+plt.ylabel("Çiçek Sayısı")
+
+# Grafiği gösterelim
+plt.show()

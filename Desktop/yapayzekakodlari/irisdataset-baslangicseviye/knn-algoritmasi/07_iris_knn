@@ -1,0 +1,38 @@
+# Gerekli kütüphaneleri ekleyelim
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+
+# Iris veri setini yükleyelim
+iris = load_iris()
+
+# Çiçek ölçümlerini alalım
+X = iris.data
+
+# Çiçek türlerini alalım
+y = iris.target
+
+# Verileri eğitim ve test olarak ayıralım
+X_egitim, X_test, y_egitim, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# KNN modelini oluşturalım
+model = KNeighborsClassifier(n_neighbors=3)
+
+# Modeli eğitim verileriyle eğitelim
+model.fit(X_egitim, y_egitim)
+
+# Yeni bir çiçeğin ölçülerini girelim
+# Sırasıyla: Çanak yaprak uzunluğu, genişliği,
+# Taç yaprak uzunluğu, genişliği
+yeni_cicek = [[5.1, 3.5, 1.4, 0.2]]
+
+# Model ile çiçeğin türünü tahmin edelim
+tahmin = model.predict(yeni_cicek)
+
+# Tahmin sonucundaki sayısal değeri çiçek adına dönüştürelim
+cicek_adi = iris.target_names[tahmin[0]]
+
+# Tahmin sonucunu ekrana yazdıralım
+print("Tahmin edilen çiçek türü:", cicek_adi)

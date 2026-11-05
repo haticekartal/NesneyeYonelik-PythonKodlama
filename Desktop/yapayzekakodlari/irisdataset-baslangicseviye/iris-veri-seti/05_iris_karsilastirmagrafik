@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+# Veri setini yükleyelim
+iris = load_iris()
+
+# Çanak yaprak uzunluklarını alalım
+x = iris.data[:, 0]
+
+# Çanak yaprak genişliklerini alalım
+y = iris.data[:, 1]
+
+# Nokta grafiği oluşturalım
+plt.scatter(x, y)
+
+# Grafik başlığını belirleyelim
+plt.title("Çanak Yaprak Uzunluğu ve Genişliği")
+
+# Eksen isimlerini yazalım
+plt.xlabel("Uzunluk")
+plt.ylabel("Genişlik")
+
+# Grafiği gösterelim
+plt.show()

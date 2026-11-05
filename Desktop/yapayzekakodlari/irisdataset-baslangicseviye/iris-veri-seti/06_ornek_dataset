@@ -1,0 +1,17 @@
+from sklearn.datasets import load_iris
+from sklearn.datasets import load_wine
+from sklearn.datasets import load_breast_cancer
+
+# Iris veri seti
+iris = load_iris()
+
+# Wine veri seti
+wine = load_wine()
+
+# Breast Cancer veri seti
+cancer = load_breast_cancer()
+
+
+print(iris.data.shape)
+print(wine.data.shape)
+print(cancer.data.shape)

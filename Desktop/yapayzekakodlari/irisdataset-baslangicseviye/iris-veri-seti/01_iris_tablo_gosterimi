@@ -1,0 +1,11 @@
+import pandas as pd
+from sklearn.datasets import load_iris
+
+# Iris veri setini yükleyelim
+iris = load_iris()
+
+# Verileri DataFrame'e dönüştürelim
+tablo = pd.DataFrame(iris.data, columns=iris.feature_names)
+
+# İlk 5 satırı terminale yazdıralım
+print(tablo.head())
